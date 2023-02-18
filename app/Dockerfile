@@ -5,3 +5,4 @@ USER node
 RUN npm init -y && npm install express
 COPY --chown=node:node . .
 EXPOSE 3000
+CMD [ "node", "app.js" ]

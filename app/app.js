@@ -2,7 +2,9 @@ const os = require("os");
 const path = require('path')
 const express = require('express')
 const app = express()
+
 const port = process.env.PORT || 3000; 
+const host = '0.0.0.0';
 
 const publicDirectory = path.join(__dirname, '/www/html/');
 
@@ -30,7 +32,7 @@ app.get('*', (req, res) => {
   res.status(404).send("This page doesn't exist");
 });
 
-const server = app.listen(port, () => {
+const server = app.listen(port, host, () => {
   console.log(`Example app listening on port ${port}`)
 });
 for (let signal of ["SIGTERM", "SIGINT"])

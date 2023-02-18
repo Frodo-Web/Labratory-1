@@ -4,12 +4,14 @@ services:
 
   app:
     build: app/
+    image: rpburdin/app:latest
     command: node app.js
 #    network_mode: host
     expose:
       - "3000"
   nginx:
     build: nginx/
+    image: rpburdin/lab-nginx:latest
     command: nginx -g 'daemon off;'
     ports:
       - "80:80"
