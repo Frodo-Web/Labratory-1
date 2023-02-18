@@ -13,9 +13,13 @@ cd Labratory-1
 docker-compose build
 ````
 ### Run multiple app instances
-The following example will run 2 instances of app:
+By default docker-compose.yml is configured to run 2 app instances:
 ````
-docker-compose up --scale app=2
+docker-compose up
+````
+You can override this and run even more instances, for example 10:
+````
+docker-compose up --scale app=10
 ````
 This will create 3 containers:
 - labratory-1_app_1
