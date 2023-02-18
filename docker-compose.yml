@@ -5,6 +5,8 @@ services:
   app:
     build: app/
     image: rpburdin/app:latest
+    deploy:
+      replicas: 2
     command: node app.js
 #    network_mode: host
     expose:

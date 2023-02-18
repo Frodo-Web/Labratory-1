@@ -9,11 +9,17 @@ const host = '0.0.0.0';
 const publicDirectory = path.join(__dirname, '/www/html/');
 
 const hostname = os.hostname();
+const network = os.networkInterfaces();
+let net_info = 'eth0:<br>';
+for (const [key, value] of Object.entries(network.eth0[0])) {
+	net_info += `${key}: ${value}<br>`
+}
 
 app.use(express.static(publicDirectory));
 
 app.get('/hostname', (req, res) => {
-  res.status(200).send(`<div>${hostname}</div>`);
+  res.status(200).send(`<div>hostname: ${hostname}</div>
+	                <div>${net_info}</div>`);
 })
 
 app.get('/image', (req, res) => {
