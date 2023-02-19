@@ -21,9 +21,10 @@ You can override this and run even more instances, for example 10:
 ````
 docker-compose up --scale app=10
 ````
-This will create 3 containers:
+This will create n containers:
 - labratory-1_app_1
 - labratory-1_app_2
+- labratory-1_app_n ... etc
 - labratory-1_nginx_1 <br>
 
 And network with the default driver (bridge):
