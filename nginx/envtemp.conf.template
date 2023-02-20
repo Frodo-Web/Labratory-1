@@ -1,0 +1,5 @@
+location = /envtext {
+  add_header Content-Type text/plain;
+  return 200 ${NGINX_MESSAGE};
+}
+
