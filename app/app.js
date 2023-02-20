@@ -39,7 +39,7 @@ app.get('/greetings', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.redirect('/greetings');
+  res.status(404).send("Page doesn't exist");
 });
 
 const server = app.listen(port, host, () => {
