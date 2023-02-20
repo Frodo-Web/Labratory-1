@@ -34,8 +34,12 @@ app.get('/', (req, res) => {
   res.status(200).sendFile(path.join(publicDirectory, 'index.html'));
 })
 
+app.get('/greetings', (req, res) => {
+  res.status(200).sendFile(path.join(publicDirectory, 'greetings/index.html)'));
+});
+
 app.get('*', (req, res) => {
-  res.status(404).send("This page doesn't exist");
+  res.redirect('/greetings');
 });
 
 const server = app.listen(port, host, () => {
